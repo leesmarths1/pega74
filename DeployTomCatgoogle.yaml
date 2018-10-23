@@ -15,6 +15,7 @@ spec:
   selector:
     app: "tomcat"
   type: "LoadBalancer"
+  sessionAffinity: ClientIP
   loadBalancerIP: ""
 #---
 #apiVersion: "autoscaling/v1"
