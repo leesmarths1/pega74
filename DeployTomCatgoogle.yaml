@@ -1,15 +1,15 @@
 kind: "Namespace"
 apiVersion: "v1"
 metadata:
-  name: "tomcat-pega74-jre8-frontend"
+  name: "pega74"
   labels: 
-    name: "tomcat-pega74-jre8-frontend"
+    name: "pega74"
 ---
 apiVersion: "apps/v1beta2"
 kind: "StatefulSet"
 metadata:
   name: "tomcat-pega74-jre8-frontend"
-  namespace: "default"
+  namespace: "pega74"
   labels:
     app: "tomcat-pega74-jre8-frontend"
 spec:
@@ -43,7 +43,7 @@ apiVersion: "v1"
 kind: "Service"
 metadata:
   name: "tomcat-service"
-  namespace: "default"
+  namespace: "pega74"
   labels:
     app: "tomcat-pega74-jre8-frontend"
 spec:
@@ -71,7 +71,7 @@ apiVersion: "autoscaling/v1"
 kind: "HorizontalPodAutoscaler"
 metadata:
   name: "tomcat-hpa"
-  namespace: "default"
+  namespace: "pega74"
   labels:
     app: "tomcat-pega74-jre8-frontend"
 spec:
@@ -87,7 +87,7 @@ kind: "StorageClass"
 apiVersion: "storage.k8s.io/v1"
 metadata:
   name: "faster"
-  namespace: "default"
+  namespace: "pega74"
 provisioner: "kubernetes.io/gce-pd"
 parameters:
   type: "pd-ssd"
@@ -97,7 +97,7 @@ apiVersion: v1
 kind: "PersistentVolumeClaim"
 metadata:
   name: "tomcat-pvc"
-  namespace: "default"
+  namespace: "pega74"
   labels:
     name: "tomcat-pega74-jre8-frontend"
   annotations:
