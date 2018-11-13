@@ -1,3 +1,10 @@
+kind: "Namespace"
+apiVersion: "v1"
+metadata:
+  name: "tomcat-pega74-jre8-frontend"
+  labels: 
+    name: "tomcat-pega74-jre8-frontend"
+---
 apiVersion: "apps/v1beta2"
 kind: "StatefulSet"
 metadata:
